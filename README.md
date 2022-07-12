@@ -6,11 +6,13 @@ clone the project
 javac *.java 
 
 '''
+
 Go to the terminal and start the rmiregistry 
 '''sh
 rmiregistry 
 
 '''
+
 Then run the client and the server 
 '''sh
 java HotelServer
