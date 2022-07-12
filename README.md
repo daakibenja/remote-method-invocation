@@ -7,16 +7,14 @@ javac *.java
 ```
 
 Go to the terminal and start the rmiregistry 
-'''sh
+```sh
 rmiregistry 
-
-'''
+```
 
 Then run the client and the server 
-'''sh
+```sh
 java HotelServer
 java HotelClient
-
-'''
+```
 Note that all the Last three commands should be run
 in different terminals and in the that sequence 
