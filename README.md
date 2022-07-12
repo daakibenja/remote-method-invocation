@@ -3,6 +3,10 @@ This is a simple implementation of Remote Method Invocation (RMI)  in java
 ## How run 
 clone the project 
 ```sh
+git clone https://github.com/daakibenja/remote-method-invocation.git
+cd remote-method-invocation
+```
+```sh
 javac *.java 
 ```
 
