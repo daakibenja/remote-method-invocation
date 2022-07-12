@@ -2,10 +2,9 @@
 This is a simple implementation of Remote Method Invocation (RMI)  in java
 ## How run 
 clone the project 
-'''sh
+```sh
 javac *.java 
-
-'''
+```
 
 Go to the terminal and start the rmiregistry 
 '''sh
