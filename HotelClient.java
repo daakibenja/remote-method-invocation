@@ -35,7 +35,8 @@ public class HotelClient {
                     case "book":
                         int roomType = Integer.parseInt(args[2]);
                         String guestName = args[3];
-                        rm.book(roomType, guestName);
+                        String message = rm.book(roomType, guestName);
+                        System.out.println(message);
                         break;
                     case "guests":
                         String[] guests = null;

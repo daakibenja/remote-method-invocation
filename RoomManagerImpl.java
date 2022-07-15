@@ -34,10 +34,20 @@ public class RoomManagerImpl extends
 
     @Override
     public String book(int roomType, String guestName) throws RemoteException {
-        this.roomTypes[roomType].setRoomNumber(roomTypes[roomType].getRoomNumber() - 1);
-        this.roomTypes[roomType].setBooked(this.roomTypes[roomType].getBooked() + 1);
-        this.guests.add(guestName);
-        return null;
+        if (roomTypes[roomType].getRoomNumber() > 0) {
+            roomTypes[roomType].setRoomNumber(roomTypes[roomType].getRoomNumber() - 1);
+
+            this.roomTypes[roomType].setBooked(this.roomTypes[roomType].getBooked() + 1);
+            guests.add(guestName);
+            for (RoomType room : roomTypes) {
+                System.out.println(room.getRoomNumber()
+                        + " rooms of type " + room.getRoomType()
+                        + " are available " + " for " + room.getRoomPrice() + " UGX per night");
+            }
+            return "Room booked successfully";
+        } else {
+            return "Sorry, there are no available rooms of type " + roomType;
+        }
     }
 
     @Override
@@ -48,14 +58,17 @@ public class RoomManagerImpl extends
     @Override
     public String[] revenue() {
         double revenue = 0;
-        String revenues[] = new String[5];
-        for (int i = 0; i < roomTypes.length; i++) {
-            revenue += roomTypes[i].getRoomPrice() * roomTypes[i].getBooked();
-            revenues[i] = "Rooms of type " + roomTypes[i].getRoomType() + " Generated revenue of " + revenue
+        ArrayList<String> revenues = new ArrayList<String>();
+        String line;
+        for (RoomType roomType : roomTypes) {
+            revenue = roomType.getRoomPrice() * roomType.getBooked();
+            line = "Rooms of type " + roomType.getRoomType() + " Generated revenue of " + revenue
                     + " UGX";
+            System.out.println(line);
+            revenues.add(line);
 
         }
-        return revenues;
+        return revenues.toArray(new String[revenues.size()]);
     }
 
 }
