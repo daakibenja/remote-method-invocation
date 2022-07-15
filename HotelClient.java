@@ -13,7 +13,7 @@ public class HotelClient {
 
         try {
             if (args.length < 2) {// No parameters passed direct the user how to use the command
-                System.out.println("Error: Expected at least 2 arguments forund " + args.length);
+                System.out.println("Error: Expected at least 2 arguments found " + args.length);
                 System.out.println("Usage: \n" +
                         "\t java HotelClient list <server address> \t-To see the avaible rooms details \n" +
                         "\t java HotelClient book <server address> <room type> <guest name> \t-To book a room \n" +

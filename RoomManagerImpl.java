@@ -39,11 +39,7 @@ public class RoomManagerImpl extends
 
             this.roomTypes[roomType].setBooked(this.roomTypes[roomType].getBooked() + 1);
             guests.add(guestName);
-            for (RoomType room : roomTypes) {
-                System.out.println(room.getRoomNumber()
-                        + " rooms of type " + room.getRoomType()
-                        + " are available " + " for " + room.getRoomPrice() + " UGX per night");
-            }
+        
             return "Room booked successfully";
         } else {
             return "Sorry, there are no available rooms of type " + roomType;
@@ -64,7 +60,6 @@ public class RoomManagerImpl extends
             revenue = roomType.getRoomPrice() * roomType.getBooked();
             line = "Rooms of type " + roomType.getRoomType() + " Generated revenue of " + revenue
                     + " UGX";
-            System.out.println(line);
             revenues.add(line);
 
         }

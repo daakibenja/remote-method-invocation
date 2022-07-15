@@ -1,8 +1,6 @@
 
 import java.rmi.Naming;
 import java.rmi.Remote;
-import java.net.MalformedURLException;
-import java.rmi.RemoteException;
 
 public class HotelServer {
     public HotelServer() {
@@ -13,6 +11,7 @@ public class HotelServer {
             // It binds (registers) to the rmiregistry
 
             Naming.rebind("rmi://localhost:1099/RoomManagerService", (Remote) rm);
+            System.out.println("Server is ready");
         } catch (Exception e) {
             System.out.println("Trouble: _" + e);
         }
